@@ -55,7 +55,9 @@ class GameController extends Controller
     public function getGames(Request $request)
     {
         $userId = $request->route()->parameter('id');
+        // dd($userId);
         $games = Game::Where('user_id', $userId)->get();
+        // dd($games);  
 
         return response()->json($games, 200);
     }
